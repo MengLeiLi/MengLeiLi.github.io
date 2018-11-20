@@ -173,7 +173,7 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2018-11-20T11:30:47.110Z" itemprop="datePublished">
+      <time datetime="2018-11-20T12:11:38.164Z" itemprop="datePublished">
           2018-11-20
       </time>
     
@@ -182,15 +182,34 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h1 id="用阿里云服务器"><a href="#用阿里云服务器" class="headerlink" title="用阿里云服务器"></a>用阿里云服务器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">hexo搭建个人博客</span><br><span class="line">1.安装Node.js   yum -y install nodejs</span><br><span class="line"></span><br><span class="line">2.通过Node包管理工具npm安装hexo npm install hexo-cli -g</span><br><span class="line"></span><br><span class="line">3.检查hexo安装好没有</span><br><span class="line">hexo --version</span><br><span class="line"></span><br><span class="line">4.使用hexo创建博客项目</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">5.将写好的Markdown文件放在blog/source/_posts</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">6.生成静态页面</span><br><span class="line">hexo generate / hexo g</span><br><span class="line">如果需要清除之前生成的</span><br><span class="line">hexo clean</span><br><span class="line">7.启动服务器</span><br><span class="line">hexo server / hexo  s</span><br><span class="line">默认使用4000端口 要在手机阿里云设置防火墙 打开4000端口</span><br></pre></td></tr></table></figure>
-<h1 id="用别人的服务器"><a href="#用别人的服务器" class="headerlink" title="用别人的服务器"></a>用别人的服务器</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">如果希望将自己的博客放到其他网站上托管,</span><br><span class="line">可以使用其他网站提供的pages服务</span><br><span class="line"></span><br><span class="line">1.首先在github上创建一个名为xxx.github.io项目 </span><br><span class="line">MengLeiLi.github.io</span><br><span class="line"></span><br><span class="line">地址复制ssh</span><br><span class="line">2.</span><br><span class="line">修改blog目录下的_config.yml文件 ,在文件最后添加</span><br><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:xxx/xxx.github.io.git</span><br><span class="line">  branch: master</span><br><span class="line"></span><br><span class="line">3.</span><br><span class="line">通过下面的命令可以实现一键部署</span><br><span class="line">hexo g -d 先生成再部署</span><br><span class="line"></span><br><span class="line">如果失败有两个原因</span><br><span class="line">	1.没有安装git部署器(可以用npm安装)</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">	2.要配置SSH证书(可以通过openssl创建证书) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">4.创建公私钥</span><br><span class="line">ssh-keygen -t rsa -b 4096 -C &quot;375366029@qq.com&quot;</span><br><span class="line">创建完成放在/root/.ssh/id_rsa.目录下</span><br><span class="line">一个叫公钥 id_rsa.pub 一个叫私钥 id_rsa</span><br><span class="line">cat id_rsa.pub</span><br><span class="line">把公钥的内容复制 进入Github项目 点settings 点Deploy keys</span><br><span class="line">然后粘贴   Allow write access勾勾要点</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">加密有两种  </span><br><span class="line">对称加密 - 加密和解密使用同一个密钥 -AES</span><br><span class="line">attack at dawn - 明文</span><br><span class="line">dwwfdn dw gdzq - 密文</span><br><span class="line">非对称加密 - 加密和解密用的不同的密钥 一个叫公钥一个叫私钥 -RSA</span><br><span class="line"></span><br><span class="line">小明有一个公钥,小红有个私钥</span><br><span class="line">小明对小红发送数据时,使用公钥加密数据</span><br><span class="line">小红收到小明发送的数据,使用私钥解密数据</span><br><span class="line"></span><br><span class="line">配置域名解析</span><br><span class="line">在阿里云或其他域名解析服务上配置一条CNAME解析</span><br><span class="line">所谓CNAME解析就是把自己的域名解析到github的pages服务</span><br><span class="line"></span><br><span class="line">可以在blog项目的source目录下添加一个CNAME文件，</span><br><span class="line">里面写上自己的域名（如：jackfrued.xyz），</span><br><span class="line">这样就可以直接通过自己的域名访问github的pages服务，</span><br><span class="line">要可以在访问github的pages服务时让域名自动切换为自己的域名</span><br></pre></td></tr></table></figure>
+      		<h1 id="用阿里云服务器"><a href="#用阿里云服务器" class="headerlink" title="用阿里云服务器"></a>用阿里云服务器</h1><p>hexo搭建个人博客<br>1.安装Node.js   yum -y install nodejs</p>
+<p>2.通过Node包管理工具npm安装hexo npm install hexo-cli -g</p>
+<p>3.检查hexo安装好没有<br>hexo –version</p>
+<p>4.使用hexo创建博客项目<br>hexo init blog<br>cd blog<br>npm install</p>
+<p>5.将写好的Markdown文件放在blog/source/_posts</p>
+<p>6.生成静态页面<br>hexo generate / hexo g<br>如果需要清除之前生成的<br>hexo clean<br>7.启动服务器<br>hexo server / hexo  s<br>默认使用4000端口 要在手机阿里云设置防火墙 打开4000端口</p>
+<h1 id="用别人的服务器"><a href="#用别人的服务器" class="headerlink" title="用别人的服务器"></a>用别人的服务器</h1><p>如果希望将自己的博客放到其他网站上托管,<br>可以使用其他网站提供的pages服务</p>
+<p>1.首先在github上创建一个名为xxx.github.io项目<br>MengLeiLi.github.io</p>
+<p>地址复制ssh<br>2.<br>修改blog目录下的_config.yml文件 ,在文件最后添加<br>Deployment<br>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a><br>deploy:<br>  type: git<br>  repo: <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:xxx/xxx.github.io.git<br>  branch: master</p>
+<p>3.<br>通过下面的命令可以实现一键部署<br>hexo g -d 先生成再部署</p>
+<p>如果失败有两个原因<br>    1.没有安装git部署器(可以用npm安装)<br>npm install hexo-deployer-git –save<br>    2.要配置SSH证书(可以通过openssl创建证书) </p>
+<p>4.创建公私钥<br>ssh-keygen -t rsa -b 4096 -C “<a href="mailto:375366029@qq.com" target="_blank" rel="noopener">375366029@qq.com</a>“<br>创建完成放在/root/.ssh/id_rsa.目录下<br>一个叫公钥 id_rsa.pub 一个叫私钥 id_rsa<br>cat id_rsa.pub<br>把公钥的内容复制 进入Github项目 点settings 点Deploy keys<br>然后粘贴   Allow write access勾勾要点</p>
+<p>加密有两种<br>对称加密 - 加密和解密使用同一个密钥 -AES<br>attack at dawn - 明文<br>dwwfdn dw gdzq - 密文<br>非对称加密 - 加密和解密用的不同的密钥 一个叫公钥一个叫私钥 -RSA</p>
+<p>小明有一个公钥,小红有个私钥<br>小明对小红发送数据时,使用公钥加密数据<br>小红收到小明发送的数据,使用私钥解密数据</p>
+<p>配置域名解析<br>在阿里云或其他域名解析服务上配置一条CNAME解析<br>所谓CNAME解析就是把自己的域名解析到github的pages服务</p>
+<p>可以在blog项目的source目录下添加一个CNAME文件，<br>里面写上自己的域名（如：jackfrued.xyz），<br>这样就可以直接通过自己的域名访问github的pages服务，<br>要可以在访问github的pages服务时让域名自动切换为自己的域名</p>
+
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
+    <a class="pull-left" href="/2018/11/20/Git/" style="float: left;">
+        ← 
+    </a>
     
-    <a class="pull-right" href="/2018/11/20/Git/">
+    
+    <a class="pull-right" href="/2018/11/20/linux/">
          →
     </a>
     
